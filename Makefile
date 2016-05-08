@@ -1,4 +1,4 @@
-obj-m := mpu9255.o
+obj-m := mpu6500.o
 
 KDIR ?= ../linux/ 
 

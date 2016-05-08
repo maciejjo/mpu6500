@@ -1,0 +1,33 @@
+diff --git a/arch/arm/boot/dts/am335x-boneblack.dts b/arch/arm/boot/dts/am335x-boneblack.dts
+index eadbba3..7464a79 100644
+--- a/arch/arm/boot/dts/am335x-boneblack.dts
++++ b/arch/arm/boot/dts/am335x-boneblack.dts
+@@ -13,7 +13,6 @@
+ / {
+ 	model = "TI AM335x BeagleBone Black";
+ 	compatible = "ti,am335x-bone-black", "ti,am335x-bone", "ti,am33xx";
+-};
+ 
+ &ldo3_reg {
+ 	regulator-min-microvolt = <1800000>;
+@@ -91,6 +90,20 @@
+ 	};
+ };
+ 
++&i2c2 {
++
++    status = "okay";
++
++    mpu6500@68 {
++        #address-cells = <1>;
++        #size-cells = <1>;
++        compatible = "is,mpu6500";
++        reg = <0x68>;
++    };
++};
++
+ &rtc {
+ 	system-power-controller;
+ };
++
++
